@@ -28,7 +28,7 @@ const TableData = () => {
     return (
         <div className='container'>
             <div className="heading">
-               <h2>Display Data Table</h2>
+               <h2>Vendor Quatation Form</h2>
             </div>
             {/* <div className="tabledata">
                 {JSON.stringify(dataJson)}
