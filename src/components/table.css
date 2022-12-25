@@ -1,0 +1,9 @@
+/* {
+    counter-reset: row-num;
+} */
+tr{
+    counter-increment: row-num;
+}
+tr td:first-child::before{
+    content: counter(row-num) ". ";
+}

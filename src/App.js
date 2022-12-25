@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import TableData from './components/displayTable';
 
 function App() {
   return (
     <div className="App">
-      <h2>Json data</h2>
+      <TableData/>
     </div>
   );
 }
