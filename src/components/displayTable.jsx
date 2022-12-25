@@ -3,10 +3,10 @@ import dataJson from '../data.json';
 import './table.css';
 
 const TableData = () => {
-    // var total = 0;
+    var totalprice = 0;
     const DisplayTableData = dataJson.map((detail) => {
         return (
-            <tr>
+            <tr className='tbl'>
                 <td></td>
                 <td>{detail.name}</td>
                 <td>{detail.price}</td>
@@ -18,7 +18,13 @@ const TableData = () => {
         )
     })
     // total = total + {detail.price*detail.qty}
-    const total = (parseInt(dataJson.price) * parseInt(dataJson.qty));
+    
+    const total = dataJson.map((sum) => {
+        return(
+           totalprice = totalprice + (sum.price * sum.qty)
+        )
+    })
+    var totalRows = total.length-1;
     return (
         <div className='container'>
             <div className="heading">
@@ -30,7 +36,7 @@ const TableData = () => {
             <div className="table">
                 <table border="1px">
                     <thead>
-                        <tr>
+                        <tr id='headeTbl'>
                             <th>S.No</th>
                             <th>NAME OF MATERIAL</th>
                             <th>PRICE</th>
@@ -43,8 +49,9 @@ const TableData = () => {
                         {DisplayTableData}
                     </tbody>
                     <tfoot>
-                        <tr style={{float:"right"}}>
-                            Grand Total {total}
+                        <tr>
+                            <td colSpan='5'>Grand Total </td>
+                            <td>{total[totalRows]}</td>
                         </tr>
                     </tfoot>
                 </table>
